@@ -47,6 +47,8 @@ jobs:
       - run: ls
       - run: pwd
       - run: cd workspace
+      - run: ls
+      - run: pwd
       - run:
           name: Deploy PR to Surge
           command: npm run surge-deploy
