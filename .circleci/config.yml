@@ -2,12 +2,9 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
-defaults: &defaults
-  working_directory: /tmp
 version: 2
 jobs:
   build:
-    <<: *defaults
     environment:
       # NODE_ENV: production
       # BABEL_ENV: production
@@ -33,7 +30,6 @@ jobs:
       # run tests!
       # - run: npm run test
   deploy:
-    <<: *defaults
     docker:
       - image: circleci/node:8.9
     steps:
