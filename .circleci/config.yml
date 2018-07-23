@@ -33,8 +33,8 @@ jobs:
     working_directory: ~
     steps:
       - run:
-        name: Deploy PR to Surge
-        command: npm run surge-deploy
+          name: Deploy PR to Surge
+          command: npm run surge-deploy
 
 workflows:
   version: 2
