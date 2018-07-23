@@ -40,13 +40,10 @@ jobs:
   deploy:
     docker:
       - image: circleci/node:8.9
-    working_directory: ~/circleci-demo-workflows
+    working_directory: ~/circleci-demo-workflows/workspace
     steps:
       - attach_workspace:
           at: ~/circleci-demo-workflows
-      - run: ls -la
-      - run: pwd
-      - run: cd workspace
       - run: ls -la
       - run: pwd
       - run:
