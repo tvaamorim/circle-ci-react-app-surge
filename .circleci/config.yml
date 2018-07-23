@@ -26,7 +26,7 @@ jobs:
       - run: npm run build
       - run: rm -rf workspace
       - run: mkdir workspace
-      - run: cp -rf build workspace/build
+      - run: cp -rf . workspace
       - run: cp package.json workspace
       - persist_to_workspace:
           root: .
