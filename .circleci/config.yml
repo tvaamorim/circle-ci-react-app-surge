@@ -20,7 +20,9 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v2-dependencies-
       - run: npm run build
-      - run: cp build workspace/build
+      - run: rm -rf workspace
+      - run: mkdir workspace
+      - run: cp -rf build workspace/build
       - persist_to_workspace:
          root: workspace
       - save_cache:
@@ -34,7 +36,7 @@ jobs:
       - image: circleci/node:8.9
     steps:
       - attach_workspace:
-         at: /tmp/workspace
+         at: /workspace
       - run: ls
       - run:
           name: Deploy PR to Surge
