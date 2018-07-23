@@ -1,0 +1,3 @@
+echo "Rodando"
+echo $CIRCLE_PR_NUMBER
+surge --project build --domain thiago-$CIRCLE_PR_NUMBER-react-app.surge.sh
