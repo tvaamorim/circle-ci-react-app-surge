@@ -27,6 +27,7 @@ jobs:
       - run: rm -rf workspace
       - run: mkdir workspace
       - run: cp -rf build workspace/build
+      - run: cp -rf package.json
       - persist_to_workspace:
           root: .
           paths: workspace/build
@@ -44,6 +45,8 @@ jobs:
       - attach_workspace:
           at: ~/circleci-demo-workflows
       - run: ls
+      - run: pwd
+      - run: cd workspace
       - run:
           name: Deploy PR to Surge
           command: npm run surge-deploy
