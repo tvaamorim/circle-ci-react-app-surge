@@ -24,13 +24,9 @@ jobs:
       - run: ls
       - run: npm install
       - run: npm run build
-      - run: rm -rf workspace
-      - run: mkdir workspace
-      - run: cp -rf . workspace
-      - run: cp package.json workspace
       - persist_to_workspace:
           root: .
-          paths: workspace
+          paths: .
       - save_cache:
           paths:
             - node_modules
@@ -40,7 +36,7 @@ jobs:
   deploy:
     docker:
       - image: circleci/node:8.9
-    working_directory: ~/circleci-demo-workflows/workspace
+    working_directory: ~/circleci-demo-workflows
     steps:
       - attach_workspace:
           at: ~/circleci-demo-workflows
