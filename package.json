@@ -11,7 +11,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "surge-deploy": "./cicle_ci_pr",
+    "surge-deploy": "./surge-deploy.sh",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
