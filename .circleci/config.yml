@@ -27,7 +27,7 @@ jobs:
       - run: rm -rf workspace
       - run: mkdir workspace
       - run: cp -rf build workspace/build
-      - run: cp -rf package.json
+      - run: cp package.json workspace
       - persist_to_workspace:
           root: .
           paths: workspace/build
