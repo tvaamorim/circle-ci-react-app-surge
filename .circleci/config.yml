@@ -14,14 +14,14 @@ jobs:
     working_directory: ~/circleci-demo-workflows
     steps:
       # Download and cache dependencies
-      - attach_workspace:
-          at: ~/circleci-demo-workflows
       - checkout
       - restore_cache:
           keys:
           - v3-dependencies-{{ checksum "package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v3-dependencies-
+      - run: pwd
+      - run: ls
       - run: npm run build
       - run: rm -rf workspace
       - run: mkdir workspace
