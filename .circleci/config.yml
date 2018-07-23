@@ -44,7 +44,7 @@ jobs:
       - run: pwd
       - run:
           name: Deploy PR to Surge
-          command: npm run surge-deploy
+          command: surge --project build --domain thiago-$CIRCLE_PR_NUMBER-react-app.surge.sh
 
 workflows:
   version: 2
