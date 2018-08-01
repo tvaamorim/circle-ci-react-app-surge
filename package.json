@@ -11,7 +11,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "surge-deploy": "surge --project build --domain thiago-$CIRCLE_PR_NUMBER-react-app.surge.sh",
+    "surge-deploy": "sh ./surge-deploy.sh",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
